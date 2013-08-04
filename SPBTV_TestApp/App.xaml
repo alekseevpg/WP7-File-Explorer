@@ -1,0 +1,23 @@
+﻿<Application
+    x:Class="SPBTV_TestApp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:models="clr-namespace:SPBTV_TestApp.ViewModels"
+    xmlns:converters="clr-namespace:SPBTV_TestApp.Converters">
+
+    <!--Application Resources-->
+    <Application.Resources>
+        <models:FileListViewModel x:Key="FileListViewModel" />
+        <converters:IsFolderToFontSizeConverter x:Key="IsFolderToFontConverter" />
+        <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    </Application.Resources>
+
+    <Application.ApplicationLifetimeObjects>
+        <!--Required object that handles lifetime events for the application-->
+        <shell:PhoneApplicationService
+            Launching="Application_Launching" Closing="Application_Closing"
+            Activated="Application_Activated" Deactivated="Application_Deactivated" />
+    </Application.ApplicationLifetimeObjects>
+
+</Application>
